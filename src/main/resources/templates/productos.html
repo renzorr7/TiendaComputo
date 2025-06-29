@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css"> 
-	<link rel="stylesheet" href="/css/table.css"> 
-	</head>
+    <link rel="stylesheet" href="/css/table.css"> 
+</head>
 <body>
     <div class="main-wrapper">
-        <div class="container product-container"> <div class="panel left-panel">
+        <div class="container product-container flex-container">
+            <div class="panel left-panel">
                 <div class="panel-header">
                     <h1>Listado de Productos</h1>
                     <a href="/" class="btn btn-secondary back-to-dashboard-btn">
@@ -39,10 +40,9 @@
                         </div>
                         
                         <div class="filter-right-group">
-                            <button type="submit" name="ordenarPorPrecio" value="menorAMayor" 
-                                    class="btn btn-sort"> <i class="fas fa-sort-amount-down"></i> Menor a Mayor
+                            <button type="submit" name="ordenarPorPrecio" value="menorAMayor" class="btn btn-sort">
+                                <i class="fas fa-sort-amount-down"></i> Menor a Mayor
                             </button>
-                            
                             <a href="/tienda/productos" class="clear-filter-link">
                                 <i class="fas fa-times-circle"></i> Limpiar Filtros
                             </a>
@@ -50,42 +50,44 @@
                     </form>
                 </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Precio</th>
-                            <th>Stock</th>
-                            <th>Categoría</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="prod : ${listaProductos}">
-                            <td th:text="${prod.id_producto}"></td>
-                            <td th:text="${prod.nombre}"></td>
-                            <td th:text="${prod.descripcion}"></td>
-                            <td th:text="${#numbers.formatDecimal(prod.precio, 1, 2)}"></td>
-                            <td th:text="${prod.stock}"></td>
-                            <td th:text="${prod.categoria.nombre_categoria}"></td>
-                            <td class="actions-cell">
-                                <a class="action-icon-btn view-btn" th:href="@{'/tienda/productos/ver/' + ${prod.id_producto}}" title="Ver">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <a class="action-icon-btn edit-btn" th:href="@{'/tienda/productos/editar/' + ${prod.id_producto}}" title="Editar">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a class="action-icon-btn delete-btn" th:href="@{'/tienda/productos/eliminar/' + ${prod.id_producto}}"
-                                   onclick="return confirm('¿Estás seguro de eliminar este producto?');"
-                                   title="Eliminar">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="prod : ${listaProductos}">
+                                <td th:text="${prod.id_producto}"></td>
+                                <td th:text="${prod.nombre}"></td>
+                                <td th:text="${prod.descripcion}"></td>
+                                <td th:text="${#numbers.formatDecimal(prod.precio, 1, 2)}"></td>
+                                <td th:text="${prod.stock}"></td>
+                                <td th:text="${prod.categoria.nombre_categoria}"></td>
+                                <td class="actions-cell">
+                                    <a class="action-icon-btn view-btn" th:href="@{'/tienda/productos/ver/' + ${prod.id_producto}}" title="Ver">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a class="action-icon-btn edit-btn" th:href="@{'/tienda/productos/editar/' + ${prod.id_producto}}" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a class="action-icon-btn delete-btn" th:href="@{'/tienda/productos/eliminar/' + ${prod.id_producto}}"
+                                       onclick="return confirm('¿Estás seguro de eliminar este producto?');"
+                                       title="Eliminar">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="panel right-panel">
@@ -109,12 +111,11 @@
                         <option value="">Seleccione una categoría</option>
                         <option th:each="cat : ${listaCategorias}"
                                 th:value="${cat.id_categoria}"
-                                th:text="${cat.nombre_categoria}"
-                                >
+                                th:text="${cat.nombre_categoria}">
                         </option>
                     </select>
 
-                    <button type="submit" class="btn"><i class="fas fa-save"></i> Guardar Producto</button>>
+                    <button type="submit" class="btn"><i class="fas fa-save"></i> Guardar Producto</button>
                 </form>
             </div>
         </div>

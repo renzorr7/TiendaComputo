@@ -50,7 +50,6 @@ textarea {
   gap: 20px;
   width: 100%;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
 
 .left-panel,
@@ -417,6 +416,9 @@ form button[type="submit"] {
   body {
     padding: 15px;
   }
+  .flex-container{
+	flex-wrap: wrap;
+  }
   .panel {
     padding: 20px;
   }
@@ -442,7 +444,6 @@ form button[type="submit"] {
   .left-panel,
   .right-panel {
     flex-basis: 100%;
-    min-width: unset;
   }
   .data-table th,
   .data-table td {

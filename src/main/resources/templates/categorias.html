@@ -7,14 +7,18 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css"> 
-	<link rel="stylesheet" href="/css/table.css"> 
-	</head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/table.css">
+</head>
 <body>
     <div class="main-wrapper">
-        <div class="container category-container"> <div class="panel left-panel"> <div class="panel-header">
+        <div class="container category-container flex-container">
+
+            <div class="panel left-panel">
+                <div class="panel-header">
                     <h1>Listado de Categorías</h1>
-                    <a href="/" class="btn btn-secondary back-to-dashboard-btn"> <i class="fas fa-arrow-left"></i> Volver al Dashboard
+                    <a href="/" class="btn btn-secondary back-to-dashboard-btn">
+                        <i class="fas fa-arrow-left"></i> Volver al Dashboard
                     </a>
                 </div>
 
@@ -22,35 +26,36 @@
                     <p th:text="${mensaje}"></p>
                 </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="cat : ${listaCategorias}">
-                            <td th:text="${cat.id_categoria}"></td>
-                            <td th:text="${cat.nombre_categoria}"></td>
-                            <td th:text="${cat.descripcion}"></td>
-                            <td class="actions-cell">
-                                <a class="action-icon-btn edit-btn" th:href="@{'/tienda/categorias/editar/' + ${cat.id_categoria}}" >
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a class="action-icon-btn delete-btn" th:href="@{'/tienda/categorias/eliminar/' + ${cat.id_categoria}}"
-                                   >
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="cat : ${listaCategorias}">
+                                <td th:text="${cat.id_categoria}"></td>
+                                <td th:text="${cat.nombre_categoria}"></td>
+                                <td th:text="${cat.descripcion}"></td>
+                                <td class="actions-cell">
+                                    <a class="action-icon-btn edit-btn" th:href="@{'/tienda/categorias/editar/' + ${cat.id_categoria}}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a class="action-icon-btn delete-btn" th:href="@{'/tienda/categorias/eliminar/' + ${cat.id_categoria}}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="panel right-panel"> 
+            <div class="panel right-panel">
                 <form th:action="@{/tienda/categorias/guardar}" th:object="${categoria}" method="post">
                     <input type="hidden" th:field="*{id_categoria}" />
 
@@ -60,9 +65,12 @@
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" th:field="*{descripcion}"></textarea>
 
-                    <button type="submit" class="btn"><i class="fas fa-save"></i> Guardar Categoría</button>                   
+                    <button type="submit" class="btn">
+                        <i class="fas fa-save"></i> Guardar Categoría
+                    </button>                   
                 </form>
             </div>
+
         </div>
     </div>
 </body>

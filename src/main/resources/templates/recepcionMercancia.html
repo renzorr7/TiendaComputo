@@ -183,8 +183,6 @@
 	        const items = productDetailsContainer.querySelectorAll('.product-item');
 	        items.forEach((item, index) => {
 	            item.querySelector('.product-label').textContent = `Producto ${index + 1}:`;
-	            item.querySelector('.product-select').name = `productoId_${index + 1}`;
-	            item.querySelector('.cantidad-input').name = `cantidad_${index + 1}`;
 	        });
 	        productCount = items.length;
 	    }
