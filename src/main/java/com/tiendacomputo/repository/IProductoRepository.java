@@ -12,7 +12,6 @@ import com.tiendacomputo.model.Producto;
 @Repository
 public interface IProductoRepository extends JpaRepository<Producto, Integer> {
 	
-
     @Query("SELECT p FROM Producto p WHERE p.categoria.id_categoria = :idCategoria")
     List<Producto> findProductosByCategoriaId(@Param("idCategoria") Integer idCategoria);
 
