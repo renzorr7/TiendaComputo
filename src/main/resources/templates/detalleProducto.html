@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/product-detail.css">
+	 </head>
+<body>
+    <div class="main-wrapper main-wrapper-detail"> <div class="panel detail-panel"> <div class="panel-header">
+                <h1>Detalles del Producto</h1>
+				<a href="/" class="btn btn-secondary back-to-dashboard-btn"> <i class="fas fa-arrow-left"></i> Volver al Dashboard
+				</a>
+            </div>
+            
+            <div class="detail-item">
+                <strong>ID:</strong> <span th:text="${producto.id_producto}"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Nombre:</strong> <span th:text="${producto.nombre}"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Descripción:</strong> <span th:text="${producto.descripcion}"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Precio:</strong> <span th:text="${producto.precio}"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Stock:</strong> <span th:text="${producto.stock}"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Categoría:</strong> <span th:text="${producto.categoria.nombre_categoria}"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

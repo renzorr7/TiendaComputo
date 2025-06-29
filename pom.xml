@@ -61,6 +61,61 @@
 		<version>1.18.38</version>
 		<scope>provided</scope>
 	</dependency>
+		<dependency>
+			<groupId>com.ciberfarma</groupId>
+			<artifactId>lp2_tema01</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+<dependency>
+    <groupId>net.sf.jasperreports</groupId>
+    <artifactId>jasperreports</artifactId>
+    <version>6.21.4</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts -->
+<dependency>
+    <groupId>net.sf.jasperreports</groupId>
+    <artifactId>jasperreports-fonts</artifactId>
+    <version>6.21.4</version>
+</dependency>		
+
+		<!-- mvnrepository.com/artifact/net.sf.barcode4j/barcode4j -->
+		<dependency>
+			<groupId>net.sf.barcode4j</groupId>
+			<artifactId>barcode4j</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<!-- mvnrepository.com/artifact/com.google.zxing/core -->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.5.0</version>
+		</dependency>
+
+		<!-- mvnrepository.com/artifact/org.apache.xmlgraphics/batik-bridge -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-bridge</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<!-- mvnrepository.com/artifact/org.apache.xmlgraphics/batik-bridge -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-bridge</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+		<!-- mvnrepository.com/artifact/org.apache.xmlgraphics/xmlgraphics-commons -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>xmlgraphics-commons</artifactId>
+			<version>1.5</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

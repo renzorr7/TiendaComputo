@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendaComputo - Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css"> </head>
+<body>
+    <div class="main-wrapper">
+        <div class="panel dashboard-panel"> <div class="panel-header">
+                <h1>Panel de Administración de TiendaComputo</h1>
+            </div>
+
+            <nav>
+                <h2>Gestión del Sistema:</h2>
+                <ul>
+                    <li>
+                        <a href="/tienda/categorias" class="dashboard-link">
+                            <i class="fas fa-sitemap"></i> Gestión de Categorías
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tienda/productos" class="dashboard-link">
+                            <i class="fas fa-box-open"></i> Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tienda/proveedores" class="dashboard-link">
+                            <i class="fas fa-truck-loading"></i> Gestión de Proveedores
+                        </a>
+                    </li>
+                </ul>
+
+                <h2>Operaciones de Inventario:</h2>
+                <ul>
+                    <li>
+                        <a href="/tienda/recepcion" class="dashboard-link">
+                            <i class="fas fa-warehouse"></i> Registrar Recepción de Mercancía
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tienda/stock" target="_blank" class="dashboard-link">
+                            <i class="fas fa-exclamation-triangle"></i> Reporte de Productos con Stock Bajo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tienda/mercancia" target="_blank" class="dashboard-link">
+                            <i class="fas fa-clipboard-list"></i> Reporte General de Recepciones
+                        </a>
+                    </li>
+                </ul>
+            </nav>    
+        </div>
+    </div>
+</body>
+</html>

@@ -1,6 +1,9 @@
 package com.tiendacomputo.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,19 +14,18 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Productos")
-public class Producto {
+@Table(name = "Recepcion_Mercancia")
+public class RecepcionMercancia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_producto;
+    private Integer id_recepcion;
+    
+    private LocalDateTime fecha_recepcion;
+    private String observaciones;
 
-    private String nombre;
-    private String descripcion;
-    private Double precio;
-    private Integer stock;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_proveedor", nullable = false)
+    private Proveedor proveedor;
 
-    @ManyToOne
-    @JoinColumn(name = "id_categoria", nullable = false)
-    private Categoria categoria;
 }
