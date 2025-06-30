@@ -69,7 +69,6 @@ public class RecepcionMercanciaController {
             RecepcionMercancia recepcionGuardada = recepcionRepo.save(recepcion);
 
 
-            // Recorremos un máximo de 100 productos enviados en el formulario
             for (int i = 1; i <= 100; i++) {
                 String idProductoStr = request.getParameter("productoId_" + i);
                 String cantidadStr = request.getParameter("cantidad_" + i);

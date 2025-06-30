@@ -49,7 +49,7 @@ public class ProductoController {
 
         // Si el usuario quiere ordenar por precio de menor a mayor, ordenamos la lista aquí
         if ("menorAMayor".equals(ordenarPorPrecio)) {
-            Collections.sort(productos, Comparator.comparing(Producto::getPrecio));
+        	productos.sort(Comparator.comparing(Producto::getPrecio));        
         }
 
         model.addAttribute("listaProductos", productos);
